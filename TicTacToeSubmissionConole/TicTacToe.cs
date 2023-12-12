@@ -68,7 +68,7 @@ namespace TicTacToeSubmissionConole
                     }
                 }
 
-                if (TicTacToe.CheckWin().Length > 7)
+                if (TicTacToe.CheckWin().Length > 5)
                 {
                     break;
                 }
@@ -119,7 +119,7 @@ namespace TicTacToeSubmissionConole
                     }
                 }
 
-                if (TicTacToe.CheckWin().Length > 7)
+                if (TicTacToe.CheckWin().Length > 5)
                 {
                     break;
                 }
