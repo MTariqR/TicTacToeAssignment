@@ -123,7 +123,7 @@ namespace TicTacToeSubmissionConole
         }
         public static string CheckWin()
         {
-            string win = "\t";
+            string win = "";
             if ((array[0, 0] == "X" | array[0, 0] == "O") & (array[0, 0] == array[0, 1] & array[0, 1] == array[0, 2]))
             {
                 win += $"Player {array[0, 0]} Wins!";
