@@ -24,13 +24,11 @@ namespace TicTacToeSubmissionConole
         {
             int xTurnCount = 0;
             int oTurnCount = 0;
-            bool xTurn = true;
-            bool oTurn = false;
 
             while (true)
             {
 
-                while (xTurn)
+                while (true)
                 {
                     // FOR ILLUSTRATION CHANGE TO YOUR OWN LOGIC TO DO TIC TAC TOE
                     _boardRenderer.Render();
@@ -54,10 +52,8 @@ namespace TicTacToeSubmissionConole
                     {
                         _boardRenderer.AddMove(int.Parse(xrow), int.Parse(xcolumn), PlayerEnum.X, true); // THIS JUST DRAWS THE BOARD (NO TIC TAC TOE LOGIC)
                         gameBoardArray[int.Parse(xrow), int.Parse(xcolumn)] = "X";
-                        xTurn = false;
-                        oTurn = true;
                         xTurnCount += 1;
-
+                        break;
                     }
                     else
                     {
@@ -68,18 +64,12 @@ namespace TicTacToeSubmissionConole
                     }
                 }
 
-                if (TicTacToe.CheckWin().Length > 5)
+                if (TicTacToe.CheckWin().Length > 5 | xTurnCount == 5)
                 {
                     break;
                 }
 
-                if (xTurnCount == 5)
-                {
-                    break;
-                }
-
-
-                while (oTurn)
+                while (true)
                 {
                     // FOR ILLUSTRATION CHANGE TO YOUR OWN LOGIC TO DO TIC TAC TOE
                     _boardRenderer.Render();
@@ -105,10 +95,8 @@ namespace TicTacToeSubmissionConole
                     {
                         _boardRenderer.AddMove(int.Parse(orow), int.Parse(ocolumn), PlayerEnum.O, true); // THIS JUST DRAWS THE BOARD (NO TIC TAC TOE LOGIC)
                         gameBoardArray[int.Parse(orow), int.Parse(ocolumn)] = "O";
-                        oTurn = false;
-                        xTurn = true;
                         oTurnCount += 1;
-
+                        break;
                     }
                     else 
                     {
