@@ -14,7 +14,12 @@ namespace TicTacToeSubmissionConole
             _boardRenderer.Render();
         }
 
-        public static string[,] array = { { "", "", "" }, { "", "", "" }, { "", "", "" } };
+        public static string[,] gameBoardArray = 
+        { 
+            { "", "", "" },     
+            { "", "", "" }, 
+            { "", "", "" } 
+        };
         public void Run()
         {
             int xTurnCount = 0;
@@ -45,10 +50,10 @@ namespace TicTacToeSubmissionConole
                     var xcolumn = Console.ReadLine();
 
 
-                    if (array[int.Parse(xrow), int.Parse(xcolumn)] != "X" & array[int.Parse(xrow), int.Parse(xcolumn)] != "O")
+                    if (gameBoardArray[int.Parse(xrow), int.Parse(xcolumn)] == "")
                     {
                         _boardRenderer.AddMove(int.Parse(xrow), int.Parse(xcolumn), PlayerEnum.X, true); // THIS JUST DRAWS THE BOARD (NO TIC TAC TOE LOGIC)
-                        array[int.Parse(xrow), int.Parse(xcolumn)] = "X";
+                        gameBoardArray[int.Parse(xrow), int.Parse(xcolumn)] = "X";
                         xTurn = false;
                         oTurn = true;
                         xTurnCount += 1;
@@ -96,10 +101,10 @@ namespace TicTacToeSubmissionConole
 
 
                     // THIS JUST DRAWS THE BOARD (NO TIC TAC TOE LOGIC)
-                    if (array[int.Parse(orow), int.Parse(ocolumn)] != "O" & array[int.Parse(orow), int.Parse(ocolumn)] != "X")
+                    if (gameBoardArray[int.Parse(orow), int.Parse(ocolumn)] == "")
                     {
                         _boardRenderer.AddMove(int.Parse(orow), int.Parse(ocolumn), PlayerEnum.O, true); // THIS JUST DRAWS THE BOARD (NO TIC TAC TOE LOGIC)
-                        array[int.Parse(orow), int.Parse(ocolumn)] = "O";
+                        gameBoardArray[int.Parse(orow), int.Parse(ocolumn)] = "O";
                         oTurn = false;
                         xTurn = true;
                         oTurnCount += 1;
@@ -123,45 +128,45 @@ namespace TicTacToeSubmissionConole
         }
         public static string CheckWin()
         {
-            string win = "";
-            if ((array[0, 0] == "X" | array[0, 0] == "O") & (array[0, 0] == array[0, 1] & array[0, 1] == array[0, 2]))
+            string win;
+            if ((gameBoardArray[0,0] != "") & (gameBoardArray[0, 0] == gameBoardArray[0, 1] & gameBoardArray[0, 1] == gameBoardArray[0, 2]))
             {
-                win += $"Player {array[0, 0]} Wins!";
+                win = $"Player {gameBoardArray[0, 0]} Wins!";
             }
-            else if ((array[1, 0] == "X" | array[1, 0] == "O") & (array[1, 0] == array[1, 1] & array[1, 1] == array[1, 2]))
+            else if ((gameBoardArray[1, 0] != "") & (gameBoardArray[1, 0] == gameBoardArray[1, 1] & gameBoardArray[1, 1] == gameBoardArray[1, 2]))
             {
-                win += $"{array[1, 0]} Player Wins!";
+                win = $"{gameBoardArray[1, 0]} Player Wins!";
             }
-            else if ((array[2, 0] == "X" | array[2, 0] == "O") & (array[2, 0] == array[2, 1] & array[1, 1] == array[2, 2]))
+            else if ((gameBoardArray[2, 0] != "") & (gameBoardArray[2, 0] == gameBoardArray[2, 1] & gameBoardArray[1, 1] == gameBoardArray[2, 2]))
             {
-                win += $"Player {array[2, 0]} Wins!";
+                win = $"Player {gameBoardArray[2, 0]} Wins!";
 
             }
-            else if ((array[0, 0] == "X" | array[0, 0] == "O") & (array[0, 0] == array[1, 1] & array[1, 1] == array[2, 2]))
+            else if ((gameBoardArray[0, 0] != "") & (gameBoardArray[0, 0] == gameBoardArray[1, 1] & gameBoardArray[1, 1] == gameBoardArray[2, 2]))
             {
-                win += $"Player {array[0, 0]} Wins!";
+                win = $"Player {gameBoardArray[0, 0]} Wins!";
 
             }
-            else if ((array[0, 2] == "X" | array[0, 2] == "O") & (array[0, 2] == array[1, 1] & array[1, 1] == array[2, 0]))
+            else if ((gameBoardArray[0, 2] != "") & (gameBoardArray[0, 2] == gameBoardArray[1, 1] & gameBoardArray[1, 1] == gameBoardArray[2, 0]))
             {
-                win += $"Player {array[0, 2]} Wins!";
+                win = $"Player {gameBoardArray[0, 2]} Wins!";
 
             }
-            else if ((array[0, 2] == "X" | array[0, 2] == "O") & (array[0, 0] == array[1, 0] & array[1, 0] == array[2, 0]))
+            else if ((gameBoardArray[0, 0] != "") & (gameBoardArray[0, 0] == gameBoardArray[1, 0] & gameBoardArray[1, 0] == gameBoardArray[2, 0]))
             {
-                win += $"Player {array[0, 0]} Wins!";
+                win = $"Player {gameBoardArray[0, 0]} Wins!";
             }
-            else if ((array[0, 2] == "X" | array[0, 2] == "O") & (array[0, 1] == array[1, 1] & array[1, 1] == array[2, 1]))
+            else if ((gameBoardArray[0, 1] != "") & (gameBoardArray[0, 1] == gameBoardArray[1, 1] & gameBoardArray[1, 1] == gameBoardArray[2, 1]))
             {
-                win += $"Player {array[0, 1]} Wins!";
+                win = $"Player {gameBoardArray[0, 1]} Wins!";
             }
-            else if ((array[0, 2] == "X" | array[0, 2] == "O") & (array[0, 2] == array[1, 2] & array[1, 2] == array[2, 2]))
+            else if ((gameBoardArray[0, 2] != "") & (gameBoardArray[0, 2] == gameBoardArray[1, 2] & gameBoardArray[1, 2] == gameBoardArray[2, 2]))
             {
-                win += $"Player {array[0, 2]} Wins!";
+                win = $"Player {gameBoardArray[0, 2]} Wins!";
             }
             else
             {
-                win += "Draw!";
+                win = "Draw!";
             }
             return win;
         }
