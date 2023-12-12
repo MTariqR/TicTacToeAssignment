@@ -54,6 +54,13 @@ namespace TicTacToeSubmissionConole
                         xTurnCount += 1;
 
                     }
+                    else
+                    {
+                        Console.Clear();
+                        Console.SetCursorPosition(10, 2);
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("Invalid! Please try again.");
+                    }
                 }
 
                 if (TicTacToe.CheckWin().Length > 7)
@@ -97,6 +104,13 @@ namespace TicTacToeSubmissionConole
                         xTurn = true;
                         oTurnCount += 1;
 
+                    }
+                    else 
+                    {
+                        Console.Clear();
+                        Console.SetCursorPosition(10, 2);
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("Invalid! Please try again.");
                     }
                 }
 
