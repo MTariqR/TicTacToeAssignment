@@ -20,8 +20,10 @@ namespace TicTacToeSubmissionConole
             Console.ForegroundColor = oldColor ;
 
             Console.SetCursorPosition(20, 25);
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine(TicTacToe.CheckWin());
             Console.SetCursorPosition(20, 27 );
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Thank you for playing");
             Console.ReadLine();
         }
