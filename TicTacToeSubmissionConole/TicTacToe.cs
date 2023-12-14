@@ -30,7 +30,6 @@ namespace TicTacToeSubmissionConole
 
                 while (true)
                 {
-                    // FOR ILLUSTRATION CHANGE TO YOUR OWN LOGIC TO DO TIC TAC TOE
                     _boardRenderer.Render();
                     Console.SetCursorPosition(2, 19);
 
@@ -50,7 +49,7 @@ namespace TicTacToeSubmissionConole
 
                     if (gameBoardArray[int.Parse(xrow), int.Parse(xcolumn)] == "")
                     {
-                        _boardRenderer.AddMove(int.Parse(xrow), int.Parse(xcolumn), PlayerEnum.X, true); // THIS JUST DRAWS THE BOARD (NO TIC TAC TOE LOGIC)
+                        _boardRenderer.AddMove(int.Parse(xrow), int.Parse(xcolumn), PlayerEnum.X, true);
                         gameBoardArray[int.Parse(xrow), int.Parse(xcolumn)] = "X";
                         xTurnCount += 1;
                         break;
@@ -71,7 +70,6 @@ namespace TicTacToeSubmissionConole
 
                 while (true)
                 {
-                    // FOR ILLUSTRATION CHANGE TO YOUR OWN LOGIC TO DO TIC TAC TOE
                     _boardRenderer.Render();
                     Console.SetCursorPosition(2, 19);
 
@@ -90,10 +88,9 @@ namespace TicTacToeSubmissionConole
 
 
 
-                    // THIS JUST DRAWS THE BOARD (NO TIC TAC TOE LOGIC)
                     if (gameBoardArray[int.Parse(orow), int.Parse(ocolumn)] == "")
                     {
-                        _boardRenderer.AddMove(int.Parse(orow), int.Parse(ocolumn), PlayerEnum.O, true); // THIS JUST DRAWS THE BOARD (NO TIC TAC TOE LOGIC)
+                        _boardRenderer.AddMove(int.Parse(orow), int.Parse(ocolumn), PlayerEnum.O, true);
                         gameBoardArray[int.Parse(orow), int.Parse(ocolumn)] = "O";
                         oTurnCount += 1;
                         break;
