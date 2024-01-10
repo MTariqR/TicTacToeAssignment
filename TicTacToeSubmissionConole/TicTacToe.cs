@@ -20,6 +20,7 @@ namespace TicTacToeSubmissionConole
             { "", "", "" }, 
             { "", "", "" } 
         };
+
         public void Run()
         {
             int xTurnCount = 0;
@@ -65,6 +66,12 @@ namespace TicTacToeSubmissionConole
 
                 if (TicTacToe.CheckWin().Length > 5 | xTurnCount == 5)
                 {
+                    Console.SetCursorPosition(20, 25);
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine(TicTacToe.CheckWin());
+                    Console.SetCursorPosition(20, 27);
+                    Console.WriteLine("Thank you for playing");
+                    Console.ReadLine();
                     break;
                 }
 
@@ -106,6 +113,12 @@ namespace TicTacToeSubmissionConole
 
                 if (TicTacToe.CheckWin().Length > 5)
                 {
+                    Console.SetCursorPosition(20, 25);
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine(TicTacToe.CheckWin());
+                    Console.SetCursorPosition(20, 27);
+                    Console.WriteLine("Thank you for playing");
+                    Console.ReadLine();
                     break;
                 }
 
